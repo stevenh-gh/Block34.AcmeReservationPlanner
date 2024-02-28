@@ -21,8 +21,8 @@ async function createTables()
 			id uuid primary key,
 			date date not null,
 			party_count integer not null,
-			restaurant_id uuid references restaurant(id),
-			customer_id uuid references customer(id)
+			restaurant_id uuid references restaurant(id) not null,
+			customer_id uuid references customer(id) not null
 		)
 	`;
 	await client.query(sql);
